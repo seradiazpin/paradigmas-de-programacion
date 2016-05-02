@@ -1,0 +1,198 @@
+﻿  <html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset='utf-8'>
+    <title> POO </title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#history">Historia</a></li>
+          <li><a href="#evolution">Evolución</a></li>
+          <li><a href="#philosophy">Filosofía y Principios</a></li>
+          <li><a href="#concepts">Conceptos Claves</a></li>
+          <li><a href="#advantage_disadvantage">Ventajas y Desventajas</a></li>
+          <li><a href="#languages">Lenguajes</a></li>
+          <li><a href="#applications">Aplicaciones</a></li>
+          <li><a href="#goodPractices">Buenas Practicas</a></li>
+        </ul>
+    </div>
+  </div>
+  </nav>
+  <div class="container">
+
+    <h1> 
+         <br> <strong><center>  Paradigma de Programación Orientada a Objectos </center></strong><br> <br> 
+
+     </h1>
+
+
+     <section id = "history">
+        <h2> <strong>Historia</strong> <h2>
+        <h3> <div align="justify">La programación orientada a objetos nace en los años 60s en el NCC ( Norwegian Computing Center) en la implementación de Simula I por Kristen Nygaard y Ole Johan Dahl <br> <br></div> <h3>
+          
+            <img  class="center-block" src="images/foto.gif" alt="Photo" >
+         
+     </section>
+
+     <section id = "evolution">
+        <h2> <strong>Evolución</strong> <h2>
+       <img  class="center-block" src="images/evolution.gif" alt="Photo" >
+         
+     </section>
+     <br> <br>
+     <section id = "philosophy">
+        <h2> <strong>Filosofía Y Principios</strong> <h2>
+        <h3>
+            POO es la implementación del pensamiento orientado a objetos en la programación <br><br>
+            POO nos dice: <br><br>
+	<ul style="list-style-type: circle;">
+            <li>Pensar en el propósito general del programa como un todo antes de subdividir este.</li>
+            <li>Dar prioridad a los objetos y no a la funcionalidad </li>
+            <br> 
+	</ul>
+            SOLID: Acrónimo memotécnico para los cinco principios de la programación y el diseño orientado a objetos nombrados por Robert C Martin <br><br>
+	<ul style="list-style-type: circle;">
+            <li>Principio de una sola responsabilidad</li>
+            <li>Principio abierto/cerrado </li>
+            <li>Principio de sustitución Liskov </li>
+            <li>Principio de segregación de interfaz </li>
+            <li>Principio de Inversión de dependencia </li>
+	</ul>
+        <h3>
+     </section>
+
+    <section id="concepts">
+	<h2><strong>Conceptos claves</strong></h2>
+	<h3>
+	<ul style="list-style-type: circle;">
+		<li>Clases</li>
+		<li>Objeto</li>
+		<li>Abstracción</li>
+		<li>Encapsulamiento</li>
+		<li>Herencia</li>
+		<li>Polimorfismo</li>
+		<li>Modularidad</li>
+		<li>Interfaz</li>
+		<li>Modificadores de Acceso</li>
+		<li>Sobrecarga de métodos</li>
+	</ul><br />
+
+	<br /> <div align="justify"><strong>Clase: </strong>La clase es un modelo o prototipo que define las variables y métodos comunes a todos los objetos de cierta clase. También se puede decir que una clase es una plantilla genérica para un conjunto de objetos de similares características. <br /></div><br>
+		<center><img   src="images/clase.png" alt="Photo" height=180 border=0 hspace=0 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;               
+		<img   src="images/clase2.png" alt="Photo" height=180 border=0 hspace=0 ></center> <br>
+	
+	<br /> <div align="justify"><strong>Constructor: </strong>Cuando se construye un objeto es necesario inicializar sus variables con valores coherentes. Esto se hace por medio de un constructor que tiene las siguientes características: Se llama igual que la clase. No devuelve nada. Pueden existir varios, pero siguiendo las reglas de la sobrecarga de funciones. De entre los que existan, tan sólo uno se ejecutará al crear un objeto de la clase. <br /> </div><br>
+		<center><img src="images/ConsPy.png" alt="Photo" height=180 border=0 hspace=0 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<img src="images/ConsPhp.png" alt="Photo" height=180 border=0 hspace=0>
+		<p>Constructor en Python y Constructor en PHP</p> <br></center><br>
+
+	<br /> <div align="justify"><strong>Clase Abstracta: </strong> Este Tipo de Clases nos permiten crear "métodos generales", que recrean un comportamiento común, pero sin especificar cómo lo hacen. A nivel de código tiene por particularidad que algunos de sus métodos no tienen &ldquo;cuerpo de declaración. <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong>Interface: </strong>  Una interfaz es un conjunto de métodos abstractos y de constantes cuya funcionalidad es la de determinar el funcionamiento de una clase, es decir, funciona como un molde o como una plantilla. <br /> </div>
+		<br>
+		<center><img src="images/AbsInt.png" alt="Photo"  border=0 hspace=0 >
+		<p>Clases abstractas vs Interfaces</p></center>
+	
+	<br /> <div align="justify"><strong> Objecto: </strong>  Los Objetos de Software, al igual que los objetos del mundo real, también tienen características y comportamientos. Un objeto de software mantiene sus características en una o más &ldquo;atributos&rdquo;, e implementa su comportamiento con "métodos". <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong>Abstracción: </strong>  Denota las características esenciales de un objeto, donde se capturan sus comportamientos. Además de ser clave en el proceso de análisis y dise&ntilde;o orientado a objetos, ya que nos permite llegar a armar un conjunto de clases que modelan la realidad o problema. <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong>Encapsulación: </strong> Es el proceso de almacenar en una misma sección los elementos de una abstracción que constituyen su estructura y su comportamiento; sirve para separar el interfaz contractual de una abstracci&oacute;n y su implantación. <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong> Herencia: </strong>La herencia básicamente consiste en que una clase puede heredar sus variables y métodos a varias subclases (la clase que hereda es llamada superclase o clase padre). <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong>Polimorfismo: </strong>Son comportamientos diferentes, asociados a objetos distintos, pueden compartir el mismo nombre; al llamarlos por ese nombre se utilizará el comportamiento correspondiente al objeto que se est&eacute; usando. <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong>Modificadores de acceso: </strong>  Son palabras claves de los lenguajes de programación orientado a objetos para configurar la accesibilidad a las clases, m&eacute;todos o propiedades. <br /> </div>
+	
+	
+	<br /> <div align="justify"><strong>Sobrecarga de métodos: </strong>  Es la definición de varios métodos con el mismo nombre pero con diferentes firmas.</div>
+
+<h3>
+</section>
+
+
+     <section id = "advantage_disadvantage">
+         <h2> <strong>Ventajas</strong> <h2>
+          <h3>
+	<ul style="list-style-type: circle;">
+      	<li>Reutilización de código.</li> 
+  		&nbsp; &nbsp;  -Rápido desarrollo. <br> 		
+ 		&nbsp; &nbsp;  -Alta calidad del código. <br> 
+		&nbsp; &nbsp;  -Bajo costo en fases de desarrollo. <br>
+ 	<li>Encapsulamiento.</li> 
+ 	<li>Beneficios de diseño.</li> 
+  	<li>Mantenimiento de Software.</li>
+  	<li>Documentación.</li> 
+ 	</ul>
+  </h3> 
+        <h2><strong> Desventajas</strong> <h2>
+  <h3> 
+	<ul style="list-style-type: circle;">
+  		<li>Tiempo en fase de diseño.</li>
+  		<li>Curva de aprendizaje. </li>
+  		<li>Tamaño del programa. </li>
+  		<li>Velocidad de ejecución.</li>
+	</ul>
+  </h3>
+     </section>
+
+     <section id = "languages">
+        <h2>  <strong>Lenguajes de programación</strong> <h2>
+        <h3>  <ul style="list-style-type: circle;">
+          <li>C++ </li> 
+          <li>Objective-C</li>
+          <li>JAVA </li>
+          <li>Smalltalk.</li>
+          <li>Ruby </li>
+          <li>Python </li>
+          <li>ActionScript </li>
+          <li>C# </li>
+          <li>PHP* </li>
+          <li>Delphi </li>
+       </ul> <h3>
+     </section>
+
+     <section id = "applications">
+        <h2> <strong>Aplicaciones</strong> <h2>
+        <h3>
+  Bases de datos orientadas a objetos <br>
+  La información es representada en forma de objetos.
+  Modelamiento y simulación de agentes
+  Los agentes son modelados como objetos.
+  Diseño de interfaz de usuario
+  Cada elemento de la interfaz es un objeto relacionado con otros.
+
+  <br> <br>
+  Buenas Prácticas
+  Patrones de Diseño
+  Los patrones de diseño buscan dar solución a problemas comunes en la programación.
+  Tipos de patrones
+  Patrones creacionales.
+  Patrones estructurales.
+  Patrones de comportamiento.
+          <h3>
+     </section>
+     <section id = "goodPractices">
+        <h2> <strong>Buenas Practicas</strong> <h2>
+        <h3> asdfasdfasdfasdfdsfafaaaaaaaaaaaaaaaaaaasdfasfd<h3>
+          
+           
+         
+     </section>
+   </div>
+
+  <script src="js/jquery.js" > </script>
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>
