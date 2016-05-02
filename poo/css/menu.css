@@ -1,0 +1,104 @@
+/* Autora: Laura Viviana Alvarez Carvajal */
+
+
+/* Menu desplegable de la pagina */
+
+.menu {
+    list-style: none;
+    background: #f4f4f4;
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+/* Modifica los elementos -li- que estan en el menu fijo */
+
+.menu > li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+
+/* Crea una linea cuando se pasa el mouse sobre el menu fijo */
+
+.menu >li:hover {}
+
+
+/* Menu desplegable, opacity: 0 que sera modificada al pasar el mouse */
+
+.menu li ul {
+    transition: opacity 1s;
+    opacity: 0;
+    height: 0;
+    width: 100%;
+    position: absolute;
+    background: #f4f4f4;
+    box-shadow: 0px 1px 1px #141414;
+    z-index: 90;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+
+/* Menu desplegable, cambia el atributo opacity a 1 para que se vea el menu desplegable */
+
+.menu li:hover > ul {
+    opacity: 1;
+    height: auto;
+    list-style: none;
+    font-size: 15px;
+}
+
+
+/* Oscurece el menu fijo al pasar el mouse */
+
+.menu:hover {}
+
+
+/* Hace que los elementos del menu desplegable tengan por lo menos el ancho del padre */
+
+.menu li ul li {
+    position: relative;
+    min-width: 100%;
+}
+
+
+/* menu-item es la clase que tienen los links -a- en el menu */
+
+
+/* Describe el comportamiento de los links en el menu */
+
+.menu-item:link,
+.menu-item:visited {
+    display: block;
+    transition: color 0.8s;
+    color: #4c4c4c;
+    text-decoration: none;
+}
+
+.menu-item:hover,
+.menu-item:active {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu li > .menu-item {
+    padding: .5em .9em;
+}
+
+
+/* Hace que el texto adicional en el menu tenga el mismo formato que los links -a- */
+
+.menu-text {
+    padding: .5em 0;
+    color: #4c4c4c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
