@@ -22,3 +22,7 @@
 section {
     margin-bottom: 50px;
 }
+
+body section {
+    font-size: 18px;
+}
