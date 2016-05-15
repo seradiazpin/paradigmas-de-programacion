@@ -1,99 +1,164 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Paradigmas de programación : Paradigmas de programación UNAL">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <title>Paradigmas de programación</title>
+    <title>AspectJ by seradiazpin</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ferestrepoca/paradigmas-de-programacion">View on GitHub</a>
+    <header>
+      <div class="container">
+        <h1>AspectJ</h1>
+        <h2>Tutorial de Aspectj</h2>
 
-          <h1 id="project_title">Paradigmas de programación</h1>
-          <h2 id="project_tagline">Paradigmas de programación UNAL</h2>
+        <section id="downloads">
+          <a href="https://github.com/seradiazpin/paradigmas-de-programacion/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/seradiazpin/paradigmas-de-programacion/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/seradiazpin/paradigmas-de-programacion" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ferestrepoca/paradigmas-de-programacion/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ferestrepoca/paradigmas-de-programacion/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="aspectj" class="anchor" href="#aspectj" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AspectJ</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2>
-<a id="paradigmas-de-programación" class="anchor" href="#paradigmas-de-programaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Paradigmas de programación</h2>
+<p>AspectJ es una extensión de AOP para Java.
+Fue creado en PARC(Palo Alto Research Center) por el equipo Xerox PARC, liderado por  Gregor Kiczales.
+Ampliamente usado como estándar de la POA.
+Se caracteriza por su simplicidad y usabilidad.</p>
 
-<p>Este sitio está dedicado a presentar diferentes <strong>paradigmas de programación</strong> y algunos tutoriales de los <strong>lenguajes de programación</strong> más representativos de cada paradigma. </p>
+<h2>
+<a id="ventajas" class="anchor" href="#ventajas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ventajas</h2>
 
-<p>Los colaboradores que han hecho posible este sitio son los estudiantes de la asignatura <a href="https://sites.google.com/a/unal.edu.co/lenguajes-de-programacion-2016-1/">Lenguajes de Programación</a> en la <a href="http://unal.edu.co/">Universidad Nacional de Colombia</a> - Sede Bogotá.</p>
+<p>*Facilita/mejora la modularidad de los desarrollos de software.
+*El código es organizado y comprimido
+*Es reutilizable
+*Añade constructores a Java que permiten la implementación modular de crosscutting concerns
+*Permite modelar referencias transversales, extiende las capacidades de POO\</p>
+
+<h2>
+<a id="lenguaje" class="anchor" href="#lenguaje" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lenguaje</h2>
+
+<h3>
+<a id="aspect" class="anchor" href="#aspect" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Aspect</h3>
+
+<p>Es la unidad central de Aspectj, se puede colocar en un archivo .aj.
+Contiene el código que expresa las reglas de los crosscutting.
+Un aspecto es una unidad de modularización en AOP como las clases son en OOP.</p>
+
+<div class="highlight highlight-source-aspectj"><pre>    <span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Aspect</span> {
+    <span class="pl-c">//CODIGO</span>
+    }</pre></div>
+
+<h3>
+<a id="pointcut" class="anchor" href="#pointcut" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PointCut</h3>
+
+<p>Una palabra del lenguaje que selecciona los puntos interesantes (join points) y colecta el contexto de este punto.
+Selecciona puntos interesantes de la ejecución.
+Pueden ser llamadas, ejecuciones, instanciar objetos, constructores, manejo de excepciones.</p>
+
+<div class="highlight highlight-source-aspectj"><pre>    pointcut nombreDePunto()<span class="pl-k">:</span> execution(<span class="pl-k">*</span> <span class="pl-smi">Clase</span><span class="pl-k">.</span>metodo(<span class="pl-k">..</span>));</pre></div>
 
 <h4>
-  <a id="programación-orientada-a-objetos" class="anchor" href="./poo/index.html" aria-hidden="true">
-  <span aria-hidden="true" class="octicon octicon-link">
-  </span>
-  Programación Orientada a objetos
-  </a>
+<a id="tipos-de-point-cuts" class="anchor" href="#tipos-de-point-cuts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tipos de point cuts</h4>
+
+<p><img src="https://github.com/unicorn.png" alt="tabla de pointcut">.
+<a href="https://eclipse.org/aspectj/doc/next/progguide/index.html">Mas informacion</a></p>
+
+<h3>
+<a id="advice" class="anchor" href="#advice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice</h3>
+
+<p>Código que se ejecutará cuando se llegue al pointcut este se puede definir de diferentes maneras.
+Existen tres tipos de advice: 
+*before ()
+*after ()
+*around ()</p>
+
+<h4>
+<a id="before" class="anchor" href="#before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Before</h4>
+
+<p>Se ejecuta  antes de cada join point.</p>
+
+<div class="highlight highlight-source-aspectj"><pre>    before() <span class="pl-k">:</span> nombreDePunto(){
+        <span class="pl-c">//CODIGO</span>
+    }</pre></div>
+
+<h4>
+<a id="after" class="anchor" href="#after" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After</h4>
+
+<p>Se ejecuta después de cada join point.
+Puede de tres tipos:
+*returning
+*throwing
+Y el por defecto en el cual se ejecuta sin importar si retorna o lanza una excepción.</p>
+
+<div class="highlight highlight-source-aspectj"><pre>    after()<span class="pl-k">:</span> nombreDePunto() {
+    <span class="pl-c">//CODIGO</span>
+    }
+
+    after() returning() <span class="pl-k">:</span> nombreDePunto(){
+    <span class="pl-c">//CODIGO</span>
+    }
+
+    after() throwing() <span class="pl-k">:</span> nombreDePunto() {
+    <span class="pl-c">//CODIGO</span>
+    }</pre></div>
+
+<h4>
+<a id="around" class="anchor" href="#around" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Around</h4>
+
+<p>Se ejecuta en lugar de el join point.
+Debe ser declarado con un tipo de retorno.
+El código del join point se puede ejecutar usando la palabra
+<code>proceed();</code></p>
+
+<div class="highlight highlight-source-aspectj"><pre>    <span class="pl-k">void</span> around() <span class="pl-k">:</span> nombreDePunto() {
+    <span class="pl-c">//CODIGO</span>
+    }
+    <span class="pl-k">void</span> around() <span class="pl-k">:</span> nombreDePunto() {
+    <span class="pl-c">//CODIGO</span>
+    <span class="pl-c1">proceed</span>();
+    <span class="pl-c">//CODIGO</span>
+    }</pre></div>
+
+<h4>
+<a id="atributos-de-los-advice" class="anchor" href="#atributos-de-los-advice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Atributos de los advice</h4>
+
+<p><code>thisJoinPoint</code> : Representa el join point en el cual el advice se está ejecutando.
+<code>thisJoinPointStaticPart</code> : equivalente a <code>thisJoinPoint.getStaticPart()</code> pero consume menos recursos.
+<code>thisEnclosingJoinPointStaticPart</code> : la parte estatica de la dinamica que encierra el join point.</p>
+
+<h3>
+<a id="sintaxis-de-anotaciones" class="anchor" href="#sintaxis-de-anotaciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sintaxis de anotaciones</h3>
+
+<h4>
+<a id="aspect-1" class="anchor" href="#aspect-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Aspect" class="user-mention">@Aspect</a>
 </h4>
 
-<h6>
-<a id="objective-c" class="anchor" href="./poo/tutoriales/Objective-C/objective-c.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Objective-C</a></h6>
+<h4>
+<a id="pointcut-1" class="anchor" href="#pointcut-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/PointCut" class="user-mention">@PointCut</a>
+</h4>
 
 <h4>
-<a id="programación-funcional" class="anchor" href="http://nbviewer.jupyter.org/url/ferestrepoca.github.io/paradigmas-de-programacion/progfun/Programacion-Funcional.ipynb" aria-hidden="true">
-  <span aria-hidden="true" class="octicon octicon-link"></span>Programación Funcional</a></h4>
-
-        <h6>
-          <a id="clojure" class="anchor" href="./progfun/tutoriales/Clojure/Clojure.html" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span>Clojure</a>
-        </h6>
+<a id="advice-before" class="anchor" href="#advice-before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice before</h4>
 
 <h4>
-<a id="programación-lógica" class="anchor" href="http://nbviewer.jupyter.org/url/ferestrepoca.github.io/paradigmas-de-programacion/proglogica/Programacion%20logica.ipynb" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Programación Lógica</a></h4>
+<a id="advice-after" class="anchor" href="#advice-after" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice after</h4>
 
-		<h6>
-          <a id="prolog" class="anchor" href="./proglogica/tutoriales/prolog-gh-pages/index.html" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span>Prolog</a>
-        </h6>
 <h4>
-<a id="programación-paralela" class="anchor" href="./paralela/teoria/prog_par.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Programación Paralela</a></h4>
-		
-		<h6>
-          <a id="julia" class="anchor" href="./paralela/tutoriales/julia/progparalela.md" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span>Julia</a>
-        </h6>
-		
-<h4>
-<a id="programación-concurrente" class="anchor" href="./progconcurrente/index.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Programación Concurrente</a></h4>
-<h6>
-          <a id="erlang" class="anchor" href="http://nbviewer.jupyter.org/url/ferestrepoca.github.io/paradigmas-de-programacion/progconcurrente/tutoriales/erlang/Tutorial-Erlang-4.ipynb" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span>Erlang</a>
-        </h6>
-<h4>
-<a id="programación-orientada-a-aspectos" class="anchor" href="#programaci%C3%B3n-orientada-a-aspectos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Programación Orientada a Aspectos</a></h4>
-<h6>
-          <a id="aspectj" class="anchor" href="#" aria-hidden="true">
-            <span aria-hidden="true" class="octicon octicon-link"></span>AspectJ</a>
-        </h6>
+<a id="advice-around" class="anchor" href="#advice-around" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice around</h4>
       </section>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Paradigmas de programación maintained by <a href="https://github.com/ferestrepoca">ferestrepoca</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    
   </body>
 </html>
