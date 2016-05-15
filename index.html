@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+    <meta charset="UTF-8">
     <title>AspectJ by seradiazpin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">AspectJ</h1>
+      <h2 class="project-tagline">Tutorial de Aspectj</h2>
+      <a href="https://github.com/seradiazpin/paradigmas-de-programacion" class="btn">View on GitHub</a>
+      <a href="https://github.com/seradiazpin/paradigmas-de-programacion/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/seradiazpin/paradigmas-de-programacion/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <header>
-      <div class="container">
-        <h1>AspectJ</h1>
-        <h2>Tutorial de Aspectj</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/seradiazpin/paradigmas-de-programacion/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/seradiazpin/paradigmas-de-programacion/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/seradiazpin/paradigmas-de-programacion" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="aspectj" class="anchor" href="#aspectj" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AspectJ</h1>
 
 <p>AspectJ es una extensión de AOP para Java.
@@ -39,11 +30,13 @@ Se caracteriza por su simplicidad y usabilidad.</p>
 <h2>
 <a id="ventajas" class="anchor" href="#ventajas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ventajas</h2>
 
-<p>*Facilita/mejora la modularidad de los desarrollos de software.
-*El código es organizado y comprimido
-*Es reutilizable
-*Añade constructores a Java que permiten la implementación modular de crosscutting concerns
-*Permite modelar referencias transversales, extiende las capacidades de POO\</p>
+<ul>
+<li>Facilita/mejora la modularidad de los desarrollos de software.</li>
+<li>El código es organizado y comprimido</li>
+<li>Es reutilizable</li>
+<li>Añade constructores a Java que permiten la implementación modular de crosscutting concerns</li>
+<li>Permite modelar referencias transversales, extiende las capacidades de POO\</li>
+</ul>
 
 <h2>
 <a id="lenguaje" class="anchor" href="#lenguaje" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lenguaje</h2>
@@ -71,17 +64,21 @@ Pueden ser llamadas, ejecuciones, instanciar objetos, constructores, manejo de e
 <h4>
 <a id="tipos-de-point-cuts" class="anchor" href="#tipos-de-point-cuts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tipos de point cuts</h4>
 
-<p><img src="https://github.com/unicorn.png" alt="tabla de pointcut">.
-<a href="https://eclipse.org/aspectj/doc/next/progguide/index.html">Mas informacion</a></p>
+<p><img src="https://github.com/unicorn.png" alt="tabla de pointcut"></p>
+
+<p><a href="https://eclipse.org/aspectj/doc/next/progguide/index.html">Mas informacion</a></p>
 
 <h3>
 <a id="advice" class="anchor" href="#advice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice</h3>
 
 <p>Código que se ejecutará cuando se llegue al pointcut este se puede definir de diferentes maneras.
-Existen tres tipos de advice: 
-*before ()
-*after ()
-*around ()</p>
+Existen tres tipos de advice: </p>
+
+<ul>
+<li>before ()</li>
+<li>after ()</li>
+<li>around ()</li>
+</ul>
 
 <h4>
 <a id="before" class="anchor" href="#before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Before</h4>
@@ -96,10 +93,13 @@ Existen tres tipos de advice:
 <a id="after" class="anchor" href="#after" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After</h4>
 
 <p>Se ejecuta después de cada join point.
-Puede de tres tipos:
-*returning
-*throwing
-Y el por defecto en el cual se ejecuta sin importar si retorna o lanza una excepción.</p>
+Puede de tres tipos:</p>
+
+<ul>
+<li>returning</li>
+<li>throwing
+Y el por defecto en el cual se ejecuta sin importar si retorna o lanza una excepción.</li>
+</ul>
 
 <div class="highlight highlight-source-aspectj"><pre>    after()<span class="pl-k">:</span> nombreDePunto() {
     <span class="pl-c">//CODIGO</span>
@@ -141,24 +141,136 @@ El código del join point se puede ejecutar usando la palabra
 <a id="sintaxis-de-anotaciones" class="anchor" href="#sintaxis-de-anotaciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sintaxis de anotaciones</h3>
 
 <h4>
-<a id="aspect-1" class="anchor" href="#aspect-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Aspect" class="user-mention">@Aspect</a>
-</h4>
+<a id="aspect-1" class="anchor" href="#aspect-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Aspect</h4>
+
+<p><img src="https://github.com/seradiazpin/paradigmas-de-programacion/blob/master/poa/tutorial/images/aspect.png" alt="aspect"></p>
 
 <h4>
-<a id="pointcut-1" class="anchor" href="#pointcut-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/PointCut" class="user-mention">@PointCut</a>
-</h4>
+<a id="pointcut-1" class="anchor" href="#pointcut-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PointCut</h4>
+
+<p><img src="https://github.com/seradiazpin/paradigmas-de-programacion/blob/master/poa/tutorial/images/pointcut.png" alt="pointcut"></p>
 
 <h4>
 <a id="advice-before" class="anchor" href="#advice-before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice before</h4>
 
+<p><img src="https://github.com/seradiazpin/paradigmas-de-programacion/blob/master/poa/tutorial/images/before.png" alt="before"></p>
+
 <h4>
 <a id="advice-after" class="anchor" href="#advice-after" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice after</h4>
 
+<p><img src="https://github.com/seradiazpin/paradigmas-de-programacion/blob/master/poa/tutorial/images/after.png" alt="after"></p>
+
 <h4>
 <a id="advice-around" class="anchor" href="#advice-around" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advice around</h4>
-      </section>
-    </div>
 
-    
+<p><img src="https://github.com/seradiazpin/paradigmas-de-programacion/blob/master/poa/tutorial/images/around.png" alt="aspect"></p>
+
+<h3>
+<a id="ejemplos" class="anchor" href="#ejemplos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ejemplos</h3>
+
+<p>A continuación veremos un ejemplo en el cual podremos ver la funcionalidad en un ejemplo sencillo.</p>
+
+<h4>
+<a id="clase-testasp" class="anchor" href="#clase-testasp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clase TestAsp</h4>
+
+<p>La clase en la cual tenemos unos cuantos metodos y un main.</p>
+
+<div class="highlight highlight-source-aspectj"><pre><span class="pl-k">public</span> <span class="pl-smi">class</span> <span class="pl-en">TestAsp</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">metodo1</span>(<span class="pl-k">int</span> <span class="pl-v">numero</span>){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Este es el metodo que recibe un numero, numero-&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>numero);
+    }
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">metodo1</span>(<span class="pl-k">int</span> <span class="pl-v">numero</span>,<span class="pl-smi">String</span> <span class="pl-v">string</span>){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Este es el metodo que recibe un numero y una cadena, <span class="pl-pds">"</span></span>
+                <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>numero-&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>numero<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">"</span>, cadena-&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>string);
+    }
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">metodo2</span>(<span class="pl-k">int</span> <span class="pl-v">numero</span>){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Este es el metodo2 que recibe un numero, numero-&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>numero);
+    }
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">metodo3</span>(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Este es el metodo3 no recibe nada<span class="pl-pds">"</span></span>);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) {
+        <span class="pl-smi">TestAsp</span> asp <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">TestAsp</span>();
+        asp<span class="pl-k">.</span>metodo1(<span class="pl-c1">1</span>);
+        asp<span class="pl-k">.</span>metodo1(<span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">"</span>HOLA<span class="pl-pds">"</span></span>);
+        asp<span class="pl-k">.</span>metodo2(<span class="pl-c1">1</span>);
+        <span class="pl-c">//asp.metodo2(1);</span>
+        asp<span class="pl-k">.</span>metodo3();
+
+        <span class="pl-k">try</span>{
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-c1">1</span><span class="pl-k">/</span><span class="pl-c1">0</span>);
+        }<span class="pl-k">catch</span>(<span class="pl-smi">Exception</span> e){
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>No se puede dividir en 0<span class="pl-pds">"</span></span>);
+        }
+    }
+}</pre></div>
+
+<h4>
+<a id="aspect-aspect" class="anchor" href="#aspect-aspect" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Aspect Aspect</h4>
+
+<p>Nuestro aspecto con algunos puntos de corte para ver su funcion.</p>
+
+<div class="highlight highlight-source-aspectj"><pre><span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Aspect</span> {
+
+    <span class="pl-k">static</span> <span class="pl-k">int</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+    <span class="pl-k">pointcut</span> <span class="pl-en">all</span>() : <span class="pl-c1">call</span>(<span class="pl-k">*</span> <span class="pl-smi">TestAsp</span><span class="pl-k">.</span><span class="pl-k">*</span>(<span class="pl-k">..</span>));
+    <span class="pl-k">pointcut</span> <span class="pl-en">cut_metodo1</span>() : <span class="pl-c1">call</span>(<span class="pl-k">*</span> <span class="pl-smi">TestAsp</span><span class="pl-k">.</span><span class="pl-k">*</span>1(<span class="pl-k">..</span>));
+    <span class="pl-k">pointcut</span> <span class="pl-en">cut_metodo2</span>() : <span class="pl-c1">call</span>(<span class="pl-k">*</span> <span class="pl-smi">TestAsp</span><span class="pl-k">.</span><span class="pl-k">*</span>2(<span class="pl-k">..</span>)) <span class="pl-k">&amp;&amp;</span> <span class="pl-k">if</span>(i <span class="pl-k">&lt;=</span> 2);
+    <span class="pl-k">pointcut</span> <span class="pl-en">cut_metodo1_int</span>() : <span class="pl-c1">call</span>(<span class="pl-k">*</span> <span class="pl-smi">TestAsp</span><span class="pl-k">.</span><span class="pl-k">*</span>1(<span class="pl-k">int</span>));
+    <span class="pl-k">pointcut</span> <span class="pl-en">cut_metodo1_IyS</span>() : <span class="pl-c1">call</span>(<span class="pl-k">*</span> <span class="pl-smi">TestAsp</span><span class="pl-k">.</span><span class="pl-k">*</span>1(<span class="pl-k">int</span>,<span class="pl-smi">String</span>));
+    <span class="pl-k">pointcut</span> <span class="pl-en">exception</span>(): <span class="pl-c1">handler</span>(<span class="pl-smi">Exception</span>);
+    <span class="pl-k">pointcut</span> <span class="pl-en">inita</span>(): <span class="pl-c1">initialization</span>(<span class="pl-smi">TestAsp</span><span class="pl-k">.</span>new());
+
+
+    <span class="pl-k">before</span>() : exception(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Alguien dividio por 0!<span class="pl-pds">"</span></span>);
+    };
+    <span class="pl-k">before</span>() : inita(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Entrando al constructor <span class="pl-pds">"</span></span><span class="pl-k">+</span>thisJoinPoint<span class="pl-k">.</span>getSignature());
+    };
+
+    <span class="pl-k">after</span>() : cut_metodo1(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Despues de entrar al metodo 1, x-&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>i);
+        i<span class="pl-k">++</span>;
+    }
+    <span class="pl-k">after</span>() : cut_metodo2(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Despues de entrar al metodo 2, x-&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>i);
+        i<span class="pl-k">++</span>;
+    }
+    <span class="pl-k">after</span>() : cut_metodo1_int(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Despues de entrar al metodo 1, con entero<span class="pl-pds">"</span></span>);
+    }
+    <span class="pl-k">after</span>() : cut_metodo1_IyS(){
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Despues de entrar al metodo 1, con entero y string<span class="pl-pds">"</span></span>);
+    }
+    <span class="pl-k">void</span> <span class="pl-k">around</span>() : all() {
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>------------------------------------------------<span class="pl-pds">"</span></span>);
+        <span class="pl-c1">proceed</span>();
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>------------------------------------------------<span class="pl-pds">"</span></span>);
+    }
+}</pre></div>
+
+<h2>
+<a id="expocicion-para-lenguajes-de-programacion-" class="anchor" href="#expocicion-para-lenguajes-de-programacion-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><em>Expocicion para lenguajes de programacion-</em>
+</h2>
+
+<p>Integrantes</p>
+
+<ul>
+<li>Sergio Alejandro Diaz Pinilla</li>
+<li>Pedro Luis Monroy Garces</li>
+<li>Jefferson Javier Hernández Panqueba</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/seradiazpin/paradigmas-de-programacion">AspectJ</a> is maintained by <a href="https://github.com/seradiazpin">seradiazpin</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
