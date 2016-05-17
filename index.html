@@ -458,19 +458,22 @@ Aunque hay join point que son comunes por buena practica los viviremos en dos as
 
 <div class="highlight highlight-source-aspectj"><pre><span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Log</span> {
     <span class="pl-k">pointcut</span> <span class="pl-en">logActions</span>():<span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>make<span class="pl-k">*</span>(<span class="pl-k">..</span>))
-                        <span class="pl-k">||</span><span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>my<span class="pl-k">*</span>(<span class="pl-k">..</span>))
-                        <span class="pl-k">||</span><span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>create<span class="pl-k">*</span>(<span class="pl-k">..</span>));
+                        <span class="pl-k">||</span><span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>my<span class="pl-k">*</span>(<span class="pl-k">..</span>));
+
 }</pre></div>
+
+<p>En el primer punto de corte queremos capturar los metodos que comiensen con make y my.</p>
 
 <div class="highlight highlight-source-aspectj"><pre><span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Login</span> {
     <span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Log</span> {
-        <span class="pl-k">pointcut</span> <span class="pl-en">needLogin</span>():<span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>make<span class="pl-k">*</span>(<span class="pl-k">..</span>))
-                            <span class="pl-k">||</span><span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>my<span class="pl-k">*</span>(<span class="pl-k">..</span>))
-                            <span class="pl-k">||</span><span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>create<span class="pl-k">*</span>(<span class="pl-k">..</span>));
+        <span class="pl-k">pointcut</span> <span class="pl-en">transaction</span>():<span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>make<span class="pl-k">*</span>(<span class="pl-k">..</span>));
+            <span class="pl-k">pointcut</span> <span class="pl-en">money</span>():<span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>my<span class="pl-k">*</span>(<span class="pl-k">..</span>));
+            <span class="pl-k">pointcut</span> <span class="pl-en">user</span>():<span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>create<span class="pl-k">*</span>(<span class="pl-k">..</span>));
     }
 }</pre></div>
 
-<p>Posteriormente agregamos los advices que queremos en los dos aspectos con su funcionalidad correspondiente.</p>
+<p>Queremos capturar las distintos tipos de transacciones.
+Posteriormente agregamos los advices que queremos en los dos aspectos con su funcionalidad correspondiente.</p>
 
 <div class="highlight highlight-source-aspectj"><pre><span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Log</span> {
     <span class="pl-smi">File</span> file <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">File</span>(<span class="pl-s"><span class="pl-pds">"</span>log.txt<span class="pl-pds">"</span></span>);
@@ -514,6 +517,8 @@ Aunque hay join point que son comunes por buena practica los viviremos en dos as
     }
 }</pre></div>
 
+<p>Queremos que escribir el los se realice depues de que la transacción se haya realizado, por esta razón elegimos after.</p>
+
 <div class="highlight highlight-source-aspectj"><pre><span class="pl-k">public</span> <span class="pl-smi">aspect</span> <span class="pl-en">Login</span> {
         <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">Scanner</span> input <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Scanner</span>(<span class="pl-smi">System</span><span class="pl-k">.</span>in);
         <span class="pl-k">pointcut</span> <span class="pl-en">needLogin</span>():<span class="pl-c1">execution</span>(<span class="pl-k">void</span> <span class="pl-smi">Bank</span><span class="pl-k">.</span>make<span class="pl-k">*</span>(<span class="pl-k">..</span>))
@@ -534,7 +539,10 @@ Aunque hay join point que son comunes por buena practica los viviremos en dos as
 
 }</pre></div>
 
-<p>Este es un ejemplo muy sencillo de lo que nos permite aspectj.</p>
+<p>Queremos que el login sea antes de la transacción se haya realizado, por esta razón elegimos before.
+Este es un ejemplo muy sencillo de lo que nos permite aspectj.</p>
+
+<p>Finalmente este código nos agrega la funcionalidad de un login antes de las transacciones y un registro de sus actividades en un archivo.</p>
 
 <p><a href="https://github.com/JeffersonH44/AspectJExamples">Mas ejemplos</a></p>
 
